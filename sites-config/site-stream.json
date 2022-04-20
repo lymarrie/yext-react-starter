@@ -2,12 +2,15 @@
   "$id": "site-entity",
   "filter": {
     "entityIds": [
-      "YFW"
+      "brand-1"
     ]
   },
   "source": "knowledgeGraph",
   "fields": [
     "name",
+    "logo",
+    "c_primaryColor",
+    "c_secondaryColor",
     "c_header",
     "c_footer",
     "c_enableConversionTracking",

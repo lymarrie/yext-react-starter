@@ -2,19 +2,37 @@ import Cta from '../components/cta';
 
 type Link = {
   label: string;
+  uRL: string;
+};
+
+type Image = {
   url: string;
-};
+}
 
-type Header = {
-  links: Link[];
-  logo: string;
-};
+type Logo = {
+  height?: number;
+  width?: number;
+  image: Image;
+}
 
-const Header = (props: Header) => {
-  const { links, logo } = props;
-  const linkDoms = links.map((link) => (
+type SiteAttributes = {
+  name: string;
+  logo: Logo;
+  c_header: Array<Link>;
+}
+
+type Site = {
+  site: SiteAttributes;
+}
+
+
+
+const Header = (props: Site) => {
+  const { site } = props;
+  console.log(site.c_header);
+  const headerLinks = site.c_header.map((link) => (
     <div>
-      <a href={link.url} target="_blank">
+      <a href={link.uRL} target="_blank">
         {link.label}
       </a>
     </div>
@@ -23,14 +41,13 @@ const Header = (props: Header) => {
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <img src={logo} width="50" height="50"></img>
-          <div className="text-2xl font-semibold">Yext's Fashion Warehouse</div>
-          {/* <div>{JSON.stringify(links)}</div> */}
-          {/* <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div> */}
-          <div className="space-x-5">
+          <img src={site.logo.image.url} width="120" height="120"></img>
+          <div className="text-2xl font-semibold">{site.name}</div>
+          <div className="flex gap-x-10 text-lg font-semibold">{headerLinks}</div>
+          {/* <div className="space-x-5">
             <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
             <Cta buttonText="Order Delivery" url="#" style="secondary-cta"></Cta>
-          </div>
+          </div> */}
         </nav>
       </div>
     </>

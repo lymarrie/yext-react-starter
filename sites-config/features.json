@@ -2,15 +2,7 @@
   "features": [
     {
       "name": "index",
-      "streamId": "products",
-      "templateType": "JS",
-      "entityPageSet": {
-        "plugin": {}
-      }
-    },
-    {
-      "name": "Product Test",
-      "streamId": "products-test",
+      "streamId": "locations",
       "templateType": "JS",
       "entityPageSet": {
         "plugin": {}
@@ -19,7 +11,7 @@
   ],
   "streams": [
     {
-      "$id": "products",
+      "$id": "locations",
       "source": "knowledgeGraph",
       "destination": "pages",
       "fields": [
@@ -30,41 +22,18 @@
         "address",
         "mainPhone",
         "description",
+        "c_richTextDescription",
         "hours",
         "photoGallery",
         "slug",
         "geocodedCoordinate",
         "services",
         "neighborhood",
-        "paymentOptions",
-        "c_relatedFAQs.question",
-        "c_relatedFAQs.answer"
+        "paymentOptions"
       ],
       "filter": {
         "entityTypes": [
           "location"
-        ]
-      },
-      "localization": {
-        "locales": [
-          "en"
-        ],
-        "primary": false
-      }
-    },
-    {
-      "$id": "products-test",
-      "source": "knowledgeGraph",
-      "destination": "pages",
-      "fields": [
-        "name",
-        "meta",
-        "id",
-        "uid"
-      ],
-      "filter": {
-        "entityTypes": [
-          "product"
         ]
       },
       "localization": {
