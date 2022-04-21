@@ -2,8 +2,7 @@
   "artifactStructure": {
     "assets": [
       {
-        "root": "dist/",
-        "pattern": "dist/*.{js,json}"
+        "root": "dist/"
       }
     ],
     "features": "sites-config/features.json",
@@ -20,7 +19,7 @@
             "pattern": "manifest.json"
           },
           {
-            "pattern": "dist/*"
+            "pattern": "dist/*.{js,json}"
           },
           {
             "pattern": "dist/assets/server/*.js"
