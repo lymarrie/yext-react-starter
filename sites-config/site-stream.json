@@ -2,7 +2,7 @@
   "$id": "site-entity",
   "filter": {
     "entityIds": [
-      "brand-1"
+      "site-entity"
     ]
   },
   "source": "knowledgeGraph",
@@ -10,9 +10,11 @@
     "name",
     "logo",
     "c_primaryColor",
+    "c_primaryColorSingleSelect",
     "c_secondaryColor",
     "c_header",
     "c_footer",
+    "c_font",
     "c_enableConversionTracking",
     "c_googleAnalytics"
   ],

@@ -2,7 +2,7 @@
   "features": [
     {
       "name": "index",
-      "streamId": "products",
+      "streamId": "locations",
       "templateType": "JS",
       "entityPageSet": {
         "plugin": {}
@@ -19,7 +19,7 @@
   ],
   "streams": [
     {
-      "$id": "products",
+      "$id": "locations",
       "source": "knowledgeGraph",
       "destination": "pages",
       "fields": [
@@ -30,14 +30,14 @@
         "address",
         "mainPhone",
         "description",
-        "c_richTextDescription",
         "hours",
         "photoGallery",
         "slug",
         "geocodedCoordinate",
-        "services",
-        "neighborhood",
-        "paymentOptions"
+        "paymentOptions",
+        "c_displayPhotoGallery",
+        "c_displayStaticMap",
+        "c_primaryColorSingleSelect"
       ],
       "filter": {
         "entityTypes": [

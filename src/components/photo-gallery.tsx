@@ -5,31 +5,35 @@ type Thumbnail = {
 };
 
 type Image = {
+  alternateText?: string;
   height?: number;
-  width?: number;
+  thumbnails?: Array<Thumbnail>;
   url: string;
-  thumbnails?: Thumbnail[];
+  width?: number;
+};
+
+type ImageObj = {
+  image: Image;
 };
 
 type PhotoGallery = {
-  photoGallery: Image[];
+  photoGallery: Array<ImageObj>;
 };
 
-const renderImages = (photoGallery: PhotoGallery) => {
-  for (const [k, v] of Object.entries(photoGallery)) {
-    console.log();
-  }
-};
-
-const PhotoGallery = (props: PhotoGallery) => {
+const PhotoGallery = (props: PhotoGallery, display: boolean) => {
   const { photoGallery } = props;
-  renderImages(props);
+  const images = photoGallery.map((element) => (
+      <div>
+        <img src={element.image.url} className="rounded-xl drop-shadow-md"></img>
+      </div>
+    ));
+
   return (
-    <div>
-      {photoGallery.map((image, index) => (
-        <img src={image.url} key={index} />
-      ))}
-    </div>
+    <>
+      <div className="section text-center grid gap-y-5">
+        <h2 className="text-4xl"><a id="gallery">Photo Gallery</a></h2>
+        <div className="grid gap-y-8 md:grid-cols-3 gap-x-5 p-8">{images}</div>
+      </div>    </>
   );
 };
 

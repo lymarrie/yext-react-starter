@@ -29,10 +29,10 @@ type Site = {
 
 const Header = (props: Site) => {
   const { site } = props;
-  console.log(site.c_header);
+  // console.log(site.c_header);
   const headerLinks = site.c_header.map((link) => (
     <div>
-      <a href={link.uRL} target="_blank">
+      <a key="uRL" href={link.uRL} className="hover:underline">
         {link.label}
       </a>
     </div>
