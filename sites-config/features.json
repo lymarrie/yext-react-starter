@@ -7,14 +7,6 @@
       "entityPageSet": {
         "plugin": {}
       }
-    },
-    {
-      "name": "static",
-      "streamId": "",
-      "templateType": "JS",
-      "staticPage": {
-        "plugin": {}
-      }
     }
   ],
   "streams": [
