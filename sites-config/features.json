@@ -8,40 +8,5 @@
         "plugin": {}
       }
     }
-  ],
-  "streams": [
-    {
-      "$id": "locations",
-      "source": "knowledgeGraph",
-      "destination": "pages",
-      "fields": [
-        "id",
-        "uid",
-        "meta",
-        "name",
-        "address",
-        "mainPhone",
-        "description",
-        "hours",
-        "photoGallery",
-        "slug",
-        "geocodedCoordinate",
-        "paymentOptions",
-        "c_displayPhotoGallery",
-        "c_displayStaticMap",
-        "c_primaryColorSingleSelect"
-      ],
-      "filter": {
-        "entityTypes": [
-          "location"
-        ]
-      },
-      "localization": {
-        "locales": [
-          "en"
-        ],
-        "primary": false
-      }
-    }
   ]
 }
