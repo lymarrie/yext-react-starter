@@ -24,6 +24,7 @@ export const reactWrapper = (
 const getCssTags = (name: string, data: any) => {
   const { __meta } = data;
   for (const [file, info] of Object.entries(__meta.manifest.bundlerManifest)) {
+    console.log(file, info);
     if (file !== `src/templates/${name}`) {
       continue;
     }

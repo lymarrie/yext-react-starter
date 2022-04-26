@@ -47,7 +47,7 @@ export const config = {
 };
 
 export const getPath = (data: any) => {
-  return `index.html`;
+  return `index`;
 };
 
 const Index = ({ data }: { data: any }) => {
