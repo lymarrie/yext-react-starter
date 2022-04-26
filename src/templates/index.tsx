@@ -9,6 +9,7 @@ import StaticMap from '../components/static-map';
 import PhotoGallery from '../components/photo-gallery';
 import { reactWrapper } from '../wrapper';
 import { renderToString } from 'react-dom/server';
+import { SchemaWrapper } from '../components/schema/jsonld';
 import '../index.css';
 
 export const config = {
@@ -25,16 +26,21 @@ export const config = {
       'meta',
       'name',
       'address',
-      'mainPhone',
       'description',
       'hours',
-      'photoGallery',
+      'mainPhone',
       'geocodedCoordinate',
-      'slug',
-      'paymentOptions',
+      'services',
+      'logo',
+      'photoGallery',
       'c_displayPhotoGallery',
       'c_displayStaticMap',
-      'c_primaryColorSingleSelect',
+      'c_primaryColor',
+      'c_secondaryColor',
+      'c_font',
+      'c_header',
+      'c_footer',
+      'c_googleAnalytics'
     ],
     filter: {
       entityTypes: ['location'],
@@ -57,29 +63,29 @@ const Index = ({ data }: { data: any }) => {
     name,
     address,
     description,
-    openTime,
     hours,
     mainPhone,
-    _site,
     geocodedCoordinate,
     services,
+    logo,
     photoGallery,
     c_displayPhotoGallery,
     c_displayStaticMap,
+    c_primaryColor,
+    c_secondaryColor,
+    c_font,
+    c_header,
+    c_footer,
+    c_googleAnalytics
   } = streamOutput;
 
   return (
     <>
       <body>
         <div className="centered-container">
-          <Header site={_site}></Header>
+          <Header name={name} header={c_header} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor} font={c_font} googleAnalytics={c_googleAnalytics} logo={logo}></Header>
         </div>
-        <Banner name={name} address={address} openTime={openTime} color={_site.c_primaryColorSingleSelect}>
-          <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta buttonText="Get Directions" url="http://google.com" style="primary-cta" />
-          </div>
-        </Banner>
+        <Banner name={name} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor}></Banner>
         <div className="centered-container">
           <div className="section text-center grid gap-y-5">
             <h2 className="text-4xl">
@@ -122,6 +128,6 @@ const Index = ({ data }: { data: any }) => {
 };
 
 export const render = (data: any) =>
-  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate);
+  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate, SchemaWrapper(data));
 
 export default Index;

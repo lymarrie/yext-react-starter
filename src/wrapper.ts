@@ -1,11 +1,19 @@
-export const reactWrapper = (data: any, name: string, filename: string, template: string, hydrate: boolean): string => {
+export const reactWrapper = (
+  data: any,
+  name: string,
+  filename: string,
+  template: string,
+  hydrate: boolean,
+  schema: any
+): string => {
   return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>React Page Usings Plugin</title>
+        <title>React Page Using Plugin</title>
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
+        ${schema}
         ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())
           .map((f) => `<link rel="stylesheet" href="/${f}"/>`)
           .join('\n')}

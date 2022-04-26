@@ -20,16 +20,21 @@
         "meta",
         "name",
         "address",
-        "mainPhone",
         "description",
         "hours",
-        "photoGallery",
+        "mainPhone",
         "geocodedCoordinate",
-        "slug",
-        "paymentOptions",
+        "services",
+        "logo",
+        "photoGallery",
         "c_displayPhotoGallery",
         "c_displayStaticMap",
-        "c_primaryColorSingleSelect"
+        "c_primaryColor",
+        "c_secondaryColor",
+        "c_font",
+        "c_header",
+        "c_footer",
+        "c_googleAnalytics"
       ],
       "filter": {
         "entityTypes": [

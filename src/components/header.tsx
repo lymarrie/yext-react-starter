@@ -15,22 +15,20 @@ type Logo = {
   image: Image;
 }
 
-type SiteAttributes = {
+type Header = {
   name: string;
+  header: Array<Link>;
+  primaryColor: string;
+  secondaryColor: string;
+  font: string;
+  googleAnalytics: Array<Link>;
   logo: Logo;
-  c_header: Array<Link>;
-}
-
-type Site = {
-  site: SiteAttributes;
 }
 
 
-
-const Header = (props: Site) => {
-  const { site } = props;
-  // console.log(site.c_header);
-  const headerLinks = site.c_header.map((link) => (
+const Header = (props: Header) => {
+  const { name, header, primaryColor, secondaryColor, font, googleAnalytics, logo } = props;
+  const headerLinks = header.map((link) => (
     <div>
       <a key="uRL" href={link.uRL} className="hover:underline">
         {link.label}
@@ -41,8 +39,8 @@ const Header = (props: Site) => {
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <img src={site.logo.image.url} width="120" height="120"></img>
-          <div className="text-2xl font-semibold">{site.name}</div>
+          <img src={logo.image.url} width="120" height="120"></img>
+          <div className="text-2xl font-semibold">{name}</div>
           <div className="flex gap-x-10 text-lg font-semibold">{headerLinks}</div>
           {/* <div className="space-x-5">
             <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
