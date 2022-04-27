@@ -14,6 +14,7 @@ export const reactWrapper = (
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${meta.name} Home Page</title>
         <meta name="description" content="${meta.description}">
+        <meta property="og:image" content="${meta.photoGallery[0].image.url}">
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
         ${schema}
         ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())

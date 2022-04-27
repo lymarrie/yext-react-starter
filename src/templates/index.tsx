@@ -119,6 +119,6 @@ const Index = ({ data }: { data: any }) => {
 };
 
 export const render = (data: any) =>
-  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate, SchemaWrapper(data), {name, description});
+  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate, SchemaWrapper(data), {name, description, photoGallery} );
 
 export default Index;
