@@ -30,8 +30,8 @@ const PhotoGallery = (props: PhotoGallery, display: boolean) => {
 
   return (
     <>
-      <div className="section text-center grid gap-y-5">
-        <h2 className="text-4xl"><a id="gallery">Photo Gallery</a></h2>
+      <div className="section text-center grid gap-y-3">
+        <h2 className="text-4xl p-8"><a id="gallery">Photo Gallery</a></h2>
         <div className="grid gap-y-8 md:grid-cols-3 gap-x-5 p-8">{images}</div>
       </div>    </>
   );
