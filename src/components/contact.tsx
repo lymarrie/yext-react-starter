@@ -1,43 +1,29 @@
-import Cta from '../components/cta';
+import Information from './information'
+import Hours from './hours'
 
-type Address = {
-  line1: string;
-  line2?: string;
-  city: string;
-  region: string;
-  postalCode: string;
-  countryCode: string;
-};
-
-const renderPrettyAddress = (address: Address) => {
-  return (
-    <>
-      <div>{address.line1}</div>
-      <div>
-        {address.city}, {address.region}
-      </div>
-    </>
-  );
-};
-
-const Contact = (props: any) => {
-  const { address, phone } = props;
-
-  return (
-    <>
-      <div className="grid gap-y-5">
-        <div className="grid gap-y-3">
-          <div className="">{renderPrettyAddress(address)}</div>
-          <div>
-            <a href="#">{phone}</a>
-          </div>
-        </div>
-        <div className="w-30">
-          <Cta buttonText="Order Online" url="#" style="primary-cta"></Cta>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Contact;
+const Contact = (props) => {
+    const {address, mainPhone, hours} = props;
+      return (
+          <>
+            <div className="section p-8 grid gap-y-10">
+              <h2 className="text-4xl text-center">
+                <a id="contact">Contact</a>
+              </h2>
+              <div className="bg-white p-10 rounded-xl drop-shadow-md">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <h3 className="text-3xl mb-3">Information</h3>
+                    <Information address={address} phone={mainPhone}></Information>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl">Opening Hours</h3>
+                    <div>{hours && <Hours title={''} hours={hours} />}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      };
+  
+  export default Contact;

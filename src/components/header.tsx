@@ -42,10 +42,6 @@ const Header = (props: Header) => {
           <img src={logo.image.url} width="120" height="120"></img>
           <div className="text-2xl font-semibold">{name}</div>
           <div className="flex gap-x-10 text-lg font-semibold">{headerLinks}</div>
-          {/* <div className="space-x-5">
-            <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
-            <Cta buttonText="Order Delivery" url="#" style="secondary-cta"></Cta>
-          </div> */}
         </nav>
       </div>
     </>
