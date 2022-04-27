@@ -5,16 +5,18 @@ export const reactWrapper = (
   template: string,
   hydrate: boolean,
   schema: any,
-  meta: any
+  metaName: string,
+  metaDescription: string,
+  metaImage: string
 ): string => {
   return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${meta.name} Home Page</title>
-        <meta name="description" content="${meta.description}">
-        <meta property="og:image" content="${meta.photoGallery[0].image.url}">
+        <title>${metaName} Home Page</title>
+        <meta name="description" content="${metaDescription}">
+        <meta property="og:image" content="${metaImage}">
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
         ${schema}
         ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())

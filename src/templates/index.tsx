@@ -86,6 +86,8 @@ const Index = ({ data }: { data: any }) => {
     }
   }, [c_font]);
 
+  console.log(photoGallery[0].image.url);
+
   return (
     <>
       <body className="font-main">
@@ -119,6 +121,6 @@ const Index = ({ data }: { data: any }) => {
 };
 
 export const render = (data: any) =>
-  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate, SchemaWrapper(data), {name, description, photoGallery} );
+  reactWrapper(data, 'index', 'index.tsx', renderToString(<Index data={data} />), config.hydrate, SchemaWrapper(data), name, description, photoGallery[0].image.url );
 
 export default Index;
