@@ -15,7 +15,7 @@ export const reactWrapper = (
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${metaName} Home Page</title>
-        <meta name="description" content=${metaDescription}>
+        <meta name="description" content=`${metaDescription}`>
         <meta property="og:image" content=${metaImage}>
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
         ${schema}
