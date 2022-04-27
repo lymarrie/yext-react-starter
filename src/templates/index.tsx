@@ -106,8 +106,8 @@ const Index = ({ data }: { data: any }) => {
         <About description={description}></About>
         <div className="w-full bg-gray-200">
           <div className="centered-container">
-            <Contact address={address} mainPhone={mainPhone} hours={hours}></Contact>
             {c_displayPhotoGallery && <PhotoGallery photoGallery={photoGallery}></PhotoGallery>}
+            <Contact address={address} mainPhone={mainPhone} hours={hours}></Contact>
             {c_displayStaticMap && (<StaticMap latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude}></StaticMap>)}
           </div>
         </div>
