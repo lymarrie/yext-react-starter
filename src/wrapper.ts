@@ -4,14 +4,16 @@ export const reactWrapper = (
   filename: string,
   template: string,
   hydrate: boolean,
-  schema: any
+  schema: any,
+  meta: any
 ): string => {
   return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>React Page Using Plugin</title>
+        <title>${meta.name} Home Page</title>
+        <meta name="description" content="${meta.description}">
         <script>window.__INITIAL__DATA__ = ${JSON.stringify(data)}</script>
         ${schema}
         ${getCssTags(`src/templates/${filename}`, data.__meta.manifest.bundlerManifest, new Set())
