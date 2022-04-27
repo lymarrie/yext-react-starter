@@ -76,7 +76,9 @@ const Index = ({ data }: { data: any }) => {
     c_secondaryColor,
     c_font,
     c_header,
-    c_footer
+    c_footer,
+    c_googleAnalytics,
+    c_metaDescription
   } = streamOutput;
 
   // Set the css variable `--main-font-family` based on the `c_font` field
