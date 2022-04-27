@@ -104,13 +104,11 @@ const Index = ({ data }: { data: any }) => {
         </div>
         <Banner name={name} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor}></Banner>
         <About description={description}></About>
-        <div className="w-full bg-gray-200">
+        <div className="w-full bg-cyan-200">
           <div className="centered-container">
             <Contact address={address} mainPhone={mainPhone} hours={hours}></Contact>
             {c_displayPhotoGallery && <PhotoGallery photoGallery={photoGallery}></PhotoGallery>}
-            {c_displayStaticMap && (
-              <StaticMap latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude}></StaticMap>
-            )}
+            {c_displayStaticMap && (<StaticMap latitude={geocodedCoordinate.latitude} longitude={geocodedCoordinate.longitude}></StaticMap>)}
           </div>
         </div>
         <Footer footer={c_footer}></Footer>
