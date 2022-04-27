@@ -34,7 +34,8 @@
         "c_font",
         "c_header",
         "c_footer",
-        "c_googleAnalytics"
+        "c_googleAnalytics",
+        "c_metaDescription"
       ],
       "filter": {
         "entityTypes": [
