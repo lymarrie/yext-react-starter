@@ -1,16 +1,15 @@
-import Banner from '../components/banner';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Cta from '../components/cta';
-import Contact from '../components/contact';
-import List from '../components/list';
-import Hours from '../components/hours';
-import StaticMap from '../components/static-map';
-import PhotoGallery from '../components/photo-gallery';
-import { reactWrapper } from '../wrapper';
+import { useEffect } from 'react';
 import { renderToString } from 'react-dom/server';
+import Banner from '../components/banner';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import Hours from '../components/hours';
+import PhotoGallery from '../components/photo-gallery';
 import { SchemaWrapper } from '../components/schema/jsonld';
+import StaticMap from '../components/static-map';
 import '../index.css';
+import { reactWrapper } from '../wrapper';
 
 export const config = {
   name: 'index',
@@ -40,7 +39,7 @@ export const config = {
       'c_font',
       'c_header',
       'c_footer',
-      'c_googleAnalytics'
+      'c_googleAnalytics',
     ],
     filter: {
       entityTypes: ['location'],
@@ -57,8 +56,7 @@ export const getPath = (data: any) => {
 };
 
 const Index = ({ data }: { data: any }) => {
-  const { document } = data;
-  const { streamOutput } = document;
+  const { streamOutput } = data.document;
   const {
     name,
     address,
@@ -76,15 +74,31 @@ const Index = ({ data }: { data: any }) => {
     c_font,
     c_header,
     c_footer,
-    c_googleAnalytics
+    c_googleAnalytics,
   } = streamOutput;
+
+  // Set the css variable `--main-font-family` based on the `c_font` field
+  useEffect(() => {
+    if (c_font) {
+      document?.documentElement.style.setProperty('--main-font-family', c_font);
+    }
+  }, [c_font]);
 
   return (
     <>
-      <body>
+      <body className="font-main">
         <div className="centered-container">
-          <Header name={name} header={c_header} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor} font={c_font} googleAnalytics={c_googleAnalytics} logo={logo}></Header>
+          <Header
+            name={name}
+            header={c_header}
+            primaryColor={c_primaryColor}
+            secondaryColor={c_secondaryColor}
+            font={c_font}
+            googleAnalytics={c_googleAnalytics}
+            logo={logo}
+          ></Header>
         </div>
+
         <Banner name={name} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor}></Banner>
         <div className="centered-container">
           <div className="section text-center grid gap-y-5">
