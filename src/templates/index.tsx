@@ -91,9 +91,9 @@ const Index = ({ data }: { data: any }) => {
   return (
     <>
       <body className="font-main">
-        {/* <div className="bg-blue-200 text-blue-700 text-center py-4">
+        <div className="bg-blue-200 text-blue-700 text-center py-4">
           Sample Banner
-        </div> */}
+        </div>
         <div className="centered-container">
           <Header
             name={name}
