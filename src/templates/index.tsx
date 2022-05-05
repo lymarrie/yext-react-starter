@@ -102,6 +102,7 @@ const Index = ({ data }: { data: any }) => {
             logo={logo}
           ></Header>
         </div>
+        <div>Test Commit</div>
         <Banner name={name} primaryColor={c_primaryColor} secondaryColor={c_secondaryColor}></Banner>
         <About description={description}></About>
         <div className="w-full bg-gray-200">
