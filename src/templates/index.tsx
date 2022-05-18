@@ -58,8 +58,9 @@ export const getPath = (data: any) => {
   return `index.html`;
 };
 
-const Index = ({ data }: { data: any }) => {
-  const { streamOutput } = data.document;
+const Index = (props: any) => {
+  const { document } = props;
+  const { streamOutput } = document;
   const {
     name,
     address,
@@ -81,19 +82,10 @@ const Index = ({ data }: { data: any }) => {
     c_metaDescription,
   } = streamOutput;
 
-  // Set the css variable `--main-font-family` based on the `c_font` field
-  useEffect(() => {
-    if (c_font) {
-      document?.documentElement.style.setProperty("--main-font-family", c_font);
-    }
-  }, [c_font]);
 
   return (
     <>
-      <body className="font-main bg-pink-200">
-        <div className="bg-blue-200 text-blue-700 text-center py-4">
-          Sample Banner
-        </div>
+      <body className="font-main">
         <div className="centered-container">
           <Header
             name={name}
@@ -105,12 +97,13 @@ const Index = ({ data }: { data: any }) => {
             logo={logo}
           ></Header>
         </div>
-
-        <Banner
+        <Banner 
           name={name}
-          primaryColor={c_primaryColor}
-          secondaryColor={c_secondaryColor}
+          secondaryColor="blue"
+          photo={photoGallery[0].image.url}
+          position="bg-center"
         ></Banner>
+
         <About description={description}></About>
         <div className="w-full bg-gray-200">
           <div className="centered-container">
@@ -120,7 +113,7 @@ const Index = ({ data }: { data: any }) => {
               hours={hours}
             ></Contact>
             {c_displayPhotoGallery && (
-              <PhotoGallery photoGallery={photoGallery}></PhotoGallery>
+              <PhotoGallery photoGallery={photoGallery.slice(1, -1)}></PhotoGallery>
             )}
             {c_displayStaticMap && (
               <StaticMap
@@ -143,10 +136,6 @@ export const render = (data: any) =>
     "index.tsx",
     renderToString(<Index data={data} />),
     config.hydrate,
-    SchemaWrapper(data),
-    data.document.streamOutput.name,
-    data.document.streamOutput.c_metaDescription,
-    data.document.streamOutput.photoGallery[0].image.url
   );
 
 export default Index;

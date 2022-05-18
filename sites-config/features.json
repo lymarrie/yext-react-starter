@@ -7,6 +7,22 @@
       "entityPageSet": {
         "plugin": {}
       }
+    },
+    {
+      "name": "about-us",
+      "streamId": "about-us",
+      "templateType": "JS",
+      "entityPageSet": {
+        "plugin": {}
+      }
+    },
+    {
+      "name": "gallery",
+      "streamId": "gallery",
+      "templateType": "JS",
+      "entityPageSet": {
+        "plugin": {}
+      }
     }
   ],
   "streams": [
@@ -40,6 +56,56 @@
       "filter": {
         "entityTypes": [
           "location"
+        ]
+      },
+      "localization": {
+        "locales": [
+          "en"
+        ],
+        "primary": false
+      }
+    },
+    {
+      "$id": "about-us",
+      "source": "knowledgeGraph",
+      "destination": "pages",
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "richTextDescription",
+        "photoGallery",
+        "slug"
+      ],
+      "filter": {
+        "entityTypes": [
+          "ce_aboutUsPage"
+        ]
+      },
+      "localization": {
+        "locales": [
+          "en"
+        ],
+        "primary": false
+      }
+    },
+    {
+      "$id": "gallery",
+      "source": "knowledgeGraph",
+      "destination": "pages",
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "richTextDescription",
+        "photoGallery",
+        "slug"
+      ],
+      "filter": {
+        "entityTypes": [
+          "ce_photoGalleryPage"
         ]
       },
       "localization": {

@@ -1,7 +1,7 @@
 import Information from './information'
 import Hours from './hours'
 
-const Contact = (props) => {
+const Contact = (props:any) => {
     const {address, mainPhone, hours} = props;
       return (
           <>

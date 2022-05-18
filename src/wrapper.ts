@@ -4,10 +4,10 @@ export const reactWrapper = (
   filename: string,
   template: string,
   hydrate: boolean,
-  schema: any,
-  metaName: string,
-  metaDescription: string,
-  metaImage: string,
+  schema?: any,
+  metaName?: string,
+  metaDescription?: string,
+  metaImage?: string,
 ): string => {
   return `<!DOCTYPE html>
     <html lang="en">
