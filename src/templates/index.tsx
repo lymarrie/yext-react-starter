@@ -62,6 +62,7 @@ const Index = (props: any) => {
   const { document } = props;
   const { streamOutput } = document;
   const {
+    _site,
     name,
     address,
     description,
@@ -90,6 +91,7 @@ const Index = (props: any) => {
           <Header
             name={name}
             header={c_header}
+            relatedPages={_site.c_relatedPages}
             primaryColor={c_primaryColor}
             secondaryColor={c_secondaryColor}
             font={c_font}
