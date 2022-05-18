@@ -1,4 +1,4 @@
-const About = (props) => {
+const About = (props:any) => {
   const { description } = props;
 
     return (
@@ -8,7 +8,7 @@ const About = (props) => {
                 <h2 className="text-4xl">
                   <a id="about">About Us</a>
                 </h2>
-                <p className="p-10">{description}</p>
+                <p className="pt-10 px-10 pb-2">{description}</p>
               </div>
           </div>
         </>

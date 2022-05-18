@@ -109,6 +109,9 @@ const Index = (props: any) => {
         <About description={description}></About>
         <div className="w-full bg-gray-200">
           <div className="centered-container">
+            <h2 className="pt-10 text-4xl text-center">
+              <a id="contact">Contact</a>
+            </h2>
             <Contact
               address={address}
               mainPhone={mainPhone}

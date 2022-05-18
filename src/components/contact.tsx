@@ -6,9 +6,6 @@ const Contact = (props:any) => {
       return (
           <>
             <div className="section p-8 grid gap-y-10">
-              <h2 className="text-4xl text-center">
-                <a id="contact">Contact</a>
-              </h2>
               <div className="bg-white p-10 rounded-xl drop-shadow-md">
                 <div className="grid grid-cols-2">
                   <div>
