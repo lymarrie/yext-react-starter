@@ -1,14 +1,6 @@
 {
   "features": [
     {
-      "name": "index",
-      "streamId": "locations",
-      "templateType": "JS",
-      "entityPageSet": {
-        "plugin": {}
-      }
-    },
-    {
       "name": "about-us",
       "streamId": "about-us",
       "templateType": "JS",
@@ -23,48 +15,17 @@
       "entityPageSet": {
         "plugin": {}
       }
+    },
+    {
+      "name": "index",
+      "streamId": "locations",
+      "templateType": "JS",
+      "entityPageSet": {
+        "plugin": {}
+      }
     }
   ],
   "streams": [
-    {
-      "$id": "locations",
-      "source": "knowledgeGraph",
-      "destination": "pages",
-      "fields": [
-        "id",
-        "uid",
-        "meta",
-        "name",
-        "address",
-        "description",
-        "hours",
-        "mainPhone",
-        "geocodedCoordinate",
-        "services",
-        "logo",
-        "photoGallery",
-        "c_displayPhotoGallery",
-        "c_displayStaticMap",
-        "c_primaryColor",
-        "c_secondaryColor",
-        "c_font",
-        "c_header",
-        "c_footer",
-        "c_googleAnalytics",
-        "c_metaDescription"
-      ],
-      "filter": {
-        "entityTypes": [
-          "location"
-        ]
-      },
-      "localization": {
-        "locales": [
-          "en"
-        ],
-        "primary": false
-      }
-    },
     {
       "$id": "about-us",
       "source": "knowledgeGraph",
@@ -106,6 +67,45 @@
       "filter": {
         "entityTypes": [
           "ce_photoGalleryPage"
+        ]
+      },
+      "localization": {
+        "locales": [
+          "en"
+        ],
+        "primary": false
+      }
+    },
+    {
+      "$id": "locations",
+      "source": "knowledgeGraph",
+      "destination": "pages",
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "address",
+        "description",
+        "hours",
+        "mainPhone",
+        "geocodedCoordinate",
+        "services",
+        "logo",
+        "photoGallery",
+        "c_displayPhotoGallery",
+        "c_displayStaticMap",
+        "c_primaryColor",
+        "c_secondaryColor",
+        "c_font",
+        "c_header",
+        "c_footer",
+        "c_googleAnalytics",
+        "c_metaDescription"
+      ],
+      "filter": {
+        "entityTypes": [
+          "location"
         ]
       },
       "localization": {
