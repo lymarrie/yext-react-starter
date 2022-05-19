@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 type Thumbnail = {
   height: number;
   width: number;
@@ -22,9 +24,13 @@ type PhotoGallery = {
 
 const PhotoGallery = (props: PhotoGallery, display: boolean) => {
   const { photoGallery } = props;
+
   const images = photoGallery.map((element) => (
       <div>
-        <img src={element.image.url} className="rounded-xl drop-shadow-md"></img>
+        <LazyLoadImage
+          height={element.image.height}
+          src={element.image.url} // use normal <img> attributes as props
+          width={element.image.width} className="animate rounded-xl drop-shadow-md"/>
       </div>
     ));
 

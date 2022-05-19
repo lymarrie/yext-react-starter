@@ -13,6 +13,7 @@ import StaticMap from "../components/static-map";
 import "../index.css";
 import { reactWrapper } from "../wrapper";
 
+
 export const config = {
   name: "index",
   hydrate: true,
@@ -105,7 +106,6 @@ const Index = (props: any) => {
           photo={photoGallery[0].image.url}
           position="bg-center"
         ></Banner>
-
         <About description={description}></About>
         <div className="w-full bg-gray-200">
           <div className="centered-container">

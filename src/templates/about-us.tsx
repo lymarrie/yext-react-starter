@@ -12,6 +12,7 @@ import { SchemaWrapper } from "../components/schema/jsonld";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import { reactWrapper } from "../wrapper";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const config = {
   name: 'about-us',
@@ -79,7 +80,14 @@ const AboutUs = (props: any) => {
         </div>
             <div className="centered-container">
                 <div className="section px-10 grid grid-cols-2 gap-x-10">
-                    {photoGallery && (<div><img src={photoGallery[1].image.url}></img></div>)}
+                    {photoGallery && (
+                        <div>
+                            <LazyLoadImage
+                                height={photoGallery[1].image.height}
+                                src={photoGallery[1].image.url} // use normal <img> attributes as props
+                                width={photoGallery[1].image.width} className=""/>
+                        </div>    
+                    )}
                     {richTextDescription && (<div>{richTextDescription}</div>)}
                 </div>
                 {photoGallery && (<PhotoGallery photoGallery={photoGallery.slice(2)}></PhotoGallery>)}

@@ -46,6 +46,7 @@ const Header = (props: Header) => {
       </div>
     ));
   }
+
   return (
     <>
       <div className="centered-container">

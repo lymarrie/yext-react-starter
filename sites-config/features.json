@@ -9,16 +9,16 @@
       }
     },
     {
-      "name": "gallery",
-      "streamId": "gallery",
+      "name": "contactpage",
+      "streamId": "contactpage",
       "templateType": "JS",
       "entityPageSet": {
         "plugin": {}
       }
     },
     {
-      "name": "contactpage",
-      "streamId": "contactpage",
+      "name": "gallery",
+      "streamId": "gallery",
       "templateType": "JS",
       "entityPageSet": {
         "plugin": {}
@@ -60,31 +60,6 @@
       }
     },
     {
-      "$id": "gallery",
-      "source": "knowledgeGraph",
-      "destination": "pages",
-      "fields": [
-        "id",
-        "uid",
-        "meta",
-        "name",
-        "richTextDescription",
-        "photoGallery",
-        "slug"
-      ],
-      "filter": {
-        "entityTypes": [
-          "ce_photoGalleryPage"
-        ]
-      },
-      "localization": {
-        "locales": [
-          "en"
-        ],
-        "primary": false
-      }
-    },
-    {
       "$id": "contactpage",
       "source": "knowledgeGraph",
       "destination": "pages",
@@ -105,6 +80,31 @@
       "filter": {
         "entityTypes": [
           "ce_contactUsPage"
+        ]
+      },
+      "localization": {
+        "locales": [
+          "en"
+        ],
+        "primary": false
+      }
+    },
+    {
+      "$id": "gallery",
+      "source": "knowledgeGraph",
+      "destination": "pages",
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "richTextDescription",
+        "photoGallery",
+        "slug"
+      ],
+      "filter": {
+        "entityTypes": [
+          "ce_photoGalleryPage"
         ]
       },
       "localization": {
